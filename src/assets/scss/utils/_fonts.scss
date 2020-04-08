@@ -1,0 +1,11 @@
+@mixin f-lato {
+  font-family: 'Lato', sans-serif;
+}
+
+@mixin f-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+label{
+  @include f-lato;
+}

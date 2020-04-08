@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+/* line 9, src/assets/scss/utils/_fonts.scss */
+label {
+  font-family: 'Lato', sans-serif;
+}
+
+/* line 17, src/assets/scss/atoms/_button.scss */
+.myButton__primary {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: 0.3s all ease-in;
+  background-color: #183F68;
+  color: #fff;
+}
+
+/* line 11, src/assets/scss/atoms/_button.scss */
+.myButton__primary:hover {
+  background-color: #133253;
+  cursor: pointer;
+}
+
+/* line 1, src/assets/scss/atoms/_toggle.scss */
+.btn-myToggle__primary {
+  background-color: #183F68;
+  color: #fff;
+}
+
+/* line 4, src/assets/scss/atoms/_toggle.scss */
+.btn-myToggle__primary:hover {
+  background-color: #133253;
+  color: #fff;
+}
