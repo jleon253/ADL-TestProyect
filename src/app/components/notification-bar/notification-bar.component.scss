@@ -1,0 +1,43 @@
+@import "../../../assets/scss/utils/layout";
+@import "../../../assets/scss/utils/variables";
+@import "../../../assets/scss/utils/fonts";
+@import "../../../assets/scss/utils/effects";
+@import "../../../assets/scss/utils/media";
+
+.notification-bar{
+  background-color: $c-primary;
+  @include d-flex-r;
+  justify-content: space-between;
+  padding: 15px 20px;
+  @include shadowHard;
+  .logo{
+    img{
+      width: 90px;
+    }
+  }
+  .notifications{
+    width: 250px;
+    @include d-flex-r;
+    justify-content: flex-end;
+    align-items: center;
+    .text{
+      @include f-roboto;
+      color: white;
+      margin-right: 10px;
+    }
+    .icon{
+      color: white;
+      .noti-badge{
+        width: 20px;
+        padding: 3px;
+        @include f-lato;
+        font-weight: 400;
+        color: white;
+        position: absolute;
+        right: 10px;
+        border-radius: 100%;
+        background-color: $c-danger;
+      }
+    }
+  }
+}
