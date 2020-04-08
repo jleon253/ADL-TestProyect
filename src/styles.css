@@ -90,7 +90,7 @@ label {
   font-family: 'Roboto', sans-serif;
   word-break: break-word;
   font-size: 12px;
-  transition: 0.5s all ease-in;
+  transition: 0.3s all ease-in;
 }
 
 /* line 5, src/assets/scss/atoms/_link.scss */
@@ -152,7 +152,7 @@ label {
   color: #183f68;
 }
 
-/* line 17, src/styles.scss */
+/* line 18, src/styles.scss */
 .myIcon {
   color: #649EDB;
 }

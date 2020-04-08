@@ -1,11 +1,37 @@
-.normalContent{
-  overflow: hidden;
-  height: auto;
-  max-height: 250px;
-  transition: 0.5s all ease-in;
+@import "../assets/scss/utils/media";
+
+.n-notification{
+  display: block;
+  @include bkp-large(){
+    display: none;
+  }
+  @include bkp-xlarge(){
+    display: none;
+  }
+}
+.n-desktop{
+  display: none;
+  @include bkp-large(){
+    display: block;
+  }
+  @include bkp-xlarge(){
+    display: block;
+  }
 }
 
-.smallContent{
-  max-height: 30px !important;
-  transition: 0.5s all ease-in;
+.n-tablet{
+  display: none;
+  @include bkp-medium(){
+    display: block;
+  }
+  @include bkp-small(){
+    display: block;
+  }
+}
+
+.n-mobile{
+  display: none;
+  @include bkp-xsmall(){
+    display: block;
+  }
 }

@@ -10,6 +10,9 @@ import { CardComponent } from './components/card/card.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { NavbarDesktopComponent } from './components/navbar-desktop/navbar-desktop.component';
 import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.component';
+import { ProductosComponent } from './components/pages/productos/productos.component';
+import { NavbarTabletComponent } from './components/navbar-tablet/navbar-tablet.component';
+import { NotificationBarComponent } from './components/notification-bar/notification-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.
     CardComponent,
     BannerComponent,
     NavbarDesktopComponent,
-    NavbarMobileComponent
+    NavbarMobileComponent,
+    ProductosComponent,
+    NavbarTabletComponent,
+    NotificationBarComponent
   ],
   imports: [
     BrowserModule,

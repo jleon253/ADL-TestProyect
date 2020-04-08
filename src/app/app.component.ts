@@ -21,10 +21,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getData().subscribe( (d) => {
-      this.data = d;
-      console.log(this.data);
-    });
+    // this.service.getData().subscribe( (d) => {
+    //   this.data = d;
+    //   console.log(this.data);
+    // });
   }
 
   mostrarDiv(e: any) {

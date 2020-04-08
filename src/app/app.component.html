@@ -1,6 +1,15 @@
 <div class="cotainer">
   <div class="row">
-    <div class="col-3"></div>
-    <div class="col-9"></div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2">
+      <app-notification-bar class="n-notification"></app-notification-bar>
+      <app-navbar-desktop class="n-desktop"></app-navbar-desktop>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none">
+      <app-navbar-tablet class="n-tablet"></app-navbar-tablet>
+      <app-navbar-mobile class="n-mobile"></app-navbar-mobile>
+    </div>
   </div>
 </div>

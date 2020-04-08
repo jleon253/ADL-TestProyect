@@ -1,1 +1,13 @@
-<p>navbar-desktop works!</p>
+<div class="navbar-desktop">
+  <div class="navbar__logo">
+    <img src="assets/img/logo_aval_desktop.jpg" alt="">
+  </div>
+  <div class="navbar__menu">
+    <ul class="menu">
+      <li class="item" routerLinkActive="active" *ngFor="let menu of menus">
+        <a class="link" routerLink="{{menu.link}}">{{ menu.name }}</a>
+        <span class="detail t-smaller">{{ menu.detail }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
