@@ -19,7 +19,17 @@
   }
 }
 
-.n-tablet{
+// .n-tablet{
+//   display: none;
+//   @include bkp-medium(){
+//     display: block;
+//   }
+//   @include bkp-small(){
+//     display: block;
+//   }
+// }
+
+.n-mobile{
   display: none;
   @include bkp-medium(){
     display: block;
@@ -27,10 +37,6 @@
   @include bkp-small(){
     display: block;
   }
-}
-
-.n-mobile{
-  display: none;
   @include bkp-xsmall(){
     display: block;
   }

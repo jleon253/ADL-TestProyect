@@ -152,7 +152,149 @@ label {
   color: #183f68;
 }
 
-/* line 18, src/styles.scss */
+/* line 36, src/assets/scss/utils/_fonts.scss */
+.t-bigger {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  word-break: break-word;
+}
+
+/* line 41, src/assets/scss/utils/_fonts.scss */
+.t-big {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  word-break: break-word;
+}
+
+/* line 46, src/assets/scss/utils/_fonts.scss */
+.t-xnormal {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  word-break: break-word;
+}
+
+/* line 51, src/assets/scss/utils/_fonts.scss */
+.t-normal {
+  font-size: 14px;
+  font-family: 'Lato', sans-serif;
+  word-break: break-word;
+}
+
+/* line 56, src/assets/scss/utils/_fonts.scss */
+.t-small {
+  font-size: 12px;
+  font-family: 'Lato', sans-serif;
+  word-break: break-word;
+}
+
+/* line 61, src/assets/scss/utils/_fonts.scss */
+.t-smaller {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+  word-break: break-word;
+}
+
+/* line 66, src/assets/scss/utils/_fonts.scss */
+label {
+  font-family: 'Lato', sans-serif;
+  word-break: break-word;
+}
+
+/* line 7, src/assets/scss/molecules/_navfooter.scss */
+.navFooter {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #183F68;
+  position: fixed;
+  bottom: 0;
+}
+
+/* line 15, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 576px) {
+  /* line 15, src/assets/scss/molecules/_navfooter.scss */
+  .navFooter .navFooter__item {
+    width: 80%;
+    padding: 15px 5px;
+  }
+}
+
+/* line 25, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item .ic {
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 576px) {
+  /* line 25, src/assets/scss/molecules/_navfooter.scss */
+  .navFooter .navFooter__item .ic {
+    font-size: 20px;
+  }
+}
+
+/* line 31, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item .name {
+  text-align: center;
+}
+
+@media only screen and (max-width: 576px) {
+  /* line 31, src/assets/scss/molecules/_navfooter.scss */
+  .navFooter .navFooter__item .name {
+    font-size: 12px;
+  }
+}
+
+/* line 37, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item .detail {
+  font-style: italic;
+}
+
+@media only screen and (max-width: 576px) {
+  /* line 37, src/assets/scss/molecules/_navfooter.scss */
+  .navFooter .navFooter__item .detail {
+    font-size: 10px;
+  }
+}
+
+/* line 43, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item .ic, .navFooter .navFooter__item .name, .navFooter .navFooter__item .detail {
+  word-break: keep-all;
+  color: #7786A2;
+  transition: 0.3s all ease-in;
+}
+
+/* line 48, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item.active {
+  background-color: #21578F;
+}
+
+/* line 50, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item.active .ic, .navFooter .navFooter__item.active .name, .navFooter .navFooter__item.active .detail {
+  color: #D8E7F6;
+}
+
+/* line 54, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item:hover {
+  cursor: pointer;
+}
+
+/* line 56, src/assets/scss/molecules/_navfooter.scss */
+.navFooter .navFooter__item:hover .ic, .navFooter .navFooter__item:hover .name, .navFooter .navFooter__item:hover .detail {
+  color: #649EDB;
+  text-decoration: none;
+}
+
+/* line 19, src/styles.scss */
 .myIcon {
   color: #649EDB;
 }

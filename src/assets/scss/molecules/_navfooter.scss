@@ -1,0 +1,62 @@
+@import "../../../assets/scss/utils/layout";
+@import "../../../assets/scss/utils/variables";
+@import "../../../assets/scss/utils/fonts";
+@import "../../../assets/scss/utils/effects";
+@import "../../../assets/scss/utils/media";
+
+.navFooter{
+  width: 100%;
+  @include d-flex-r;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $c-primary;
+  position: fixed;
+  bottom: 0;
+  .navFooter__item{
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    @include d-flex-c;
+    align-items: center;
+    @include bkp-xsmall {  
+      width: 80%;
+      padding: 15px 5px;
+    }
+    .ic{
+      margin-bottom: 5px;
+      @include bkp-xsmall {
+        font-size: 20px;
+      }
+    }
+    .name{
+      text-align: center;
+      @include bkp-xsmall {
+        @include f-12;
+      }
+    }
+    .detail{
+      font-style: italic;
+      @include bkp-xsmall {
+        @include f-10;
+      }
+    }
+    .ic, .name, .detail{
+      word-break: keep-all;
+      color: $t-link__inactive;
+      @include transitionSoft;
+    }
+    &.active{
+      background-color: $c-navF__item--active;
+      .ic, .name, .detail{
+        color: $t-link__active;
+      }
+    }
+    &:hover{
+      cursor: pointer;
+      .ic, .name, .detail{
+        color: $t-link__hover;
+        text-decoration: none;
+      }
+    }
+  }
+}
