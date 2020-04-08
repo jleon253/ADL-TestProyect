@@ -1,8 +1,12 @@
-.btn-myToggle__primary{
-  background-color: $c-myButton__primary;
-  color: $t-myButton__primary;
-  &:hover{
-    background-color: $c-myButton__primary--hover;
+.myToggle__primary{
+  background-color: $c-myButton__primary--disabled;
+  color: $t-myButton__primary--disabled;
+  &.active{
+    background-color: $c-myButton__primary;
     color: $t-myButton__primary;
   }
+}
+
+.myToggle__text{
+  @include f-14;
 }

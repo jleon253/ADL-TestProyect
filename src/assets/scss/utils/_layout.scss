@@ -1,0 +1,11 @@
+@mixin d-flex{
+  display: flex;
+}
+@mixin d-flex-r{
+  @include d-flex;
+  flex-direction: row;
+}
+@mixin d-flex-c{
+  @include d-flex;
+  flex-direction: column;
+}

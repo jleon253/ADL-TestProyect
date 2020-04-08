@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'assets/scss/utils/layout';
 @import 'assets/scss/utils/variables';
+@import 'assets/scss/utils/text';
 @import 'assets/scss/utils/fonts';
+@import 'assets/scss/utils/effects';
 
 @import 'assets/scss/atoms/button';
+@import 'assets/scss/atoms/link';
 @import 'assets/scss/atoms/toggle';
+
+@import 'assets/scss/molecules/swiper';
+
+// @import 'app/app.component.scss';
+
+.myIcon{
+  color: #649EDB;
+}

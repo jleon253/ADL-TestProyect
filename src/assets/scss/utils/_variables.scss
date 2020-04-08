@@ -2,3 +2,6 @@ $c-myButton__primary: #183F68;
 $t-myButton__primary: #fff;
 
 $c-myButton__primary--hover: darken($c-myButton__primary, 5%);
+
+$c-myButton__primary--disabled: #E8E8E8;
+$t-myButton__primary--disabled: #999999;

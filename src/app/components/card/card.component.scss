@@ -1,0 +1,42 @@
+@import '../../../assets/scss/utils/layout';
+@import '../../../assets/scss/utils/effects';
+@import '../../../assets/scss/utils/fonts';
+.myCard{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  @include shadowSoft;
+  .myCard__head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .myCard__body{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    .myCard__title{
+      margin-bottom: 15px;
+    }
+    .myCard__description{
+    }
+  }
+  .myCard__details--column{
+    margin-bottom: 15px;
+    @include d-flex-c;
+    .details-content{
+      display: inline-flex;
+      *:first-child{
+        margin-right: 5px;
+      }
+    }
+  }
+  .myCard__details--row{
+    margin-bottom: 15px;
+    @include d-flex-r;
+    justify-content: space-between;
+  }
+}

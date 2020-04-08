@@ -1,0 +1,11 @@
+.normalContent{
+  overflow: hidden;
+  height: auto;
+  max-height: 250px;
+  transition: 0.5s all ease-in;
+}
+
+.smallContent{
+  max-height: 30px !important;
+  transition: 0.5s all ease-in;
+}

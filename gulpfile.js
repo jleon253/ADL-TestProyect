@@ -2,7 +2,8 @@
 
 const gulp = require ('gulp');
 const sass = require ('gulp-sass');
-const autoprefixer = require ('gulp-autoprefixer');
+const autoprefixer = require ('autoprefixer');
+const postcss = require ('gulp-postcss');
 // const imagemin = require ('gulp-imagemin');
 
 const paths = {
@@ -23,9 +24,7 @@ const compileSass = () => {
     outputStyle: 'expanded',
     sourceComments: true
   }))
-  .pipe(autoprefixer({
-    versions: ['last 2 browsers']
-  }))
+  .pipe(postcss([ autoprefixer() ]))
   .pipe(gulp.dest(paths.styles.dest));
 };
 
