@@ -35,14 +35,4 @@ export class AppComponent implements OnInit {
     setTimeout(() => m.style.display = 'none', 350);
   }
 
-  mostrarDiv(e: any) {
-    if (!e.target.checked) {
-      e.target.previousSibling.textContent = 'Oculto';
-      this.renderer.addClass(this.d1.nativeElement, 'smallContent');
-    } else {
-      e.target.previousSibling.textContent = 'Visible';
-      this.renderer.removeClass(this.d1.nativeElement, 'smallContent');
-    }
-  }
-
 }

@@ -1,0 +1,5 @@
+@mixin f-center-between() {
+  @include d-flex-r;
+  justify-content: space-between;
+  align-items: center;
+}

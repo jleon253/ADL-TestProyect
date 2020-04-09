@@ -1,38 +1,42 @@
-<div class="container px-0">
+<div class="container-fluid px-0 mx-0">
   <div class="row mx-0">
-    <div style="z-index: 2;" class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 px-0">
+
+    <div style="z-index: 52;" class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 px-0">
       <app-notification-bar class="n-notification"></app-notification-bar>
       <app-navbar-desktop class="n-desktop"></app-navbar-desktop>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 px-0">
+
+    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10">
       <router-outlet></router-outlet>
     </div>
-    <div style="z-index: 1;" class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none px-0">
+
+    <div style="z-index: 50;" class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none px-0">
       <app-navbar-mobile class="n-mobile"></app-navbar-mobile>
     </div>
-    <div id="menu-full" style="z-index: 1;" class="menu-full hideMenu">
+
+    <div id="menu-full" style="z-index: 51;" class="menu-full hideMenu">
       <div class="head">
         <h3 class="title t-bigger">Más opciones</h3>
         <a (click)="hideMenuFull()"><i class="fas fa-times ic"></i></a>
       </div>
       <div class="menu-g">
         <div class="menu__item">
-          <i class="fas fa-file ic"></i>
-          <h4 class="t-normal">Certificados</h4>
+          <i class="fas fa-file fa-2x ic"></i>
+          <div class="t-normal">Certificados</div>
         </div>
         <div class="menu__item">
-          <i class="fas fa-lock ic"></i>
-          <h4 class="t-normal">Seguridad</h4>
+          <i class="fas fa-lock fa-2x ic"></i>
+          <div class="t-normal">Seguridad</div>
         </div>
       </div>
       <div class="menu-g">
         <div class="menu__item">
-          <i class="fas fa-user-circle ic"></i>
-          <h4 class="t-normal">Perfil</h4>
+          <i class="fas fa-user-circle fa-2x ic"></i>
+          <div class="t-normal">Perfil</div>
         </div>
         <div class="menu__item">
-          <i class="fas fa-sign-out-alt ic"></i>
-          <h4 class="t-normal">Salida segura</h4>
+          <i class="fas fa-sign-out-alt fa-2x ic"></i>
+          <div class="t-normal">Salida segura</div>
         </div>
       </div>
     </div>

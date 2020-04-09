@@ -1,23 +1,52 @@
 @import '../../../assets/scss/utils/layout';
 @import '../../../assets/scss/utils/effects';
 @import '../../../assets/scss/utils/fonts';
+@import '../../../assets/scss/utils/media';
 
 .myBanner{
   width: 100%;
-  @include d-flex-r;
   justify-content: space-between;
   align-items: center;
   background-color: #D8E7F6;
-  border: 1px solid #4B6185;
   border-radius: 5px;
   padding: 10px 50px;
+  // border: 1px solid #4B6185;
+  @include d-flex-r;
+  @include bkp-xsmall(){
+    @include d-flex-c;
+    padding: 10px 10px;
+  }
+  @include bkp-small(){
+    @include d-flex-c;
+    padding: 10px 10px;
+  }
   .myBanner__mensaje{
-    // width: 80%;
+    width: 40%;
     @include f-lato;
     font-weight: 700;
+    text-align: center;
+    @include bkp-xsmall(){
+      width: 100%;
+    }
+    @include bkp-large(){
+      text-align: left;
+    }
+    @include bkp-xlarge(){
+      width: 60%;
+      text-align: left;
+    }
   }
   .myBanner__info{
-    width: 40%;
+    width: 60%;
+    @include bkp-xsmall(){
+      width: 100%;
+    }
+    @include bkp-small(){
+      width: 100%;
+    }
+    @include bkp-xlarge(){
+      width: 40%;
+    }
     .swiper-container {
       width: 100%;
       height: 100%;
@@ -31,6 +60,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+      }
+      .swiper-button-next{
+        @include bkp-xsmall(){
+          right: 0;
+        }
+        @include bkp-small(){
+          right: 0;
+        }
+      }
+      .swiper-button-prev{
+        @include bkp-xsmall(){
+          left: 0;
+        }
+        @include bkp-small(){
+          left: 0;
+        }
       }
       .swiper-button-next::after, .swiper-button-prev::after{
         font-size: 14px;
@@ -49,8 +94,38 @@
       @include d-flex-r;
       justify-content: space-around;
       align-items: center;
-      .info__text{}
-      .info__value{}
+      @include bkp-xsmall(){
+        width: 90%;
+      }
+      @include bkp-small(){
+        width: 90%;
+      }
+      .info__text{
+        @include bkp-xsmall(){
+          width: 50%;
+          text-align: center;
+          word-break: break-word;
+        }
+        @include bkp-small(){
+          width: 50%;
+          text-align: center;
+          word-break: break-word;
+        }
+      }
+      .info__value{
+        @include bkp-xsmall(){
+          width: 50%;
+          text-align: center;
+          word-break: normal;
+          font-size: 16px;
+        }
+        @include bkp-small(){
+          width: 50%;
+          text-align: center;
+          word-break: normal;
+          font-size: 16px;
+        }
+      }
     }
   }
 }

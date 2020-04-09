@@ -1,1 +1,141 @@
-<p>productos works!</p>
+<div class="row">
+  <div
+    class="col-lg-12 col-xl-12 d-none d-sm-none d-md-none d-lg-block d-xl-block my-3">
+    <div class="topbar">
+      <h3 class="t-bigger t-dark">
+        Buenos días, John
+      </h3>
+      <div class="menu-right">
+        <div class="menu__item">
+          <div class="t-xnormal">Perfil</div>
+          <i class="fas fa-user-circle ic"></i>
+        </div>
+        <div class="menu__item">
+          <div class="t-xnormal">Alertas</div>
+          <i class="far fa-bell ic"></i>
+          <span class="badge noti-badge">4</span>
+        </div>
+        <div class="menu__item">
+          <div class="t-xnormal">Salida segura</div>
+          <i class="fas fa-sign-out-alt ic"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-xl-12 d-none d-sm-none d-md-none d-lg-block d-xl-block">
+    <div class="show-banks">
+      <div class="text t-dark">
+        <b>¿Qué quieres ver?:</b>
+      </div>
+      <div class="bank-group">
+        <div class="text t-light">
+          Bank_1
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn myToggle__primary active">
+            <span class="myToggle__text">Visible</span>
+            <input type="checkbox" checked (change)="showBank($event)" />
+          </label>
+        </div>
+      </div>
+      <div class="bank-group">
+        <div class="text t-light">
+          Bank_2
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn myToggle__primary">
+            <span class="myToggle__text">Oculto</span>
+            <input type="checkbox" (change)="mostrarDiv($event)" />
+          </label>
+        </div>
+      </div>
+      <div class="bank-group">
+        <div class="text t-light">
+          Bank_3
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+          <label class="btn myToggle__primary">
+            <span class="myToggle__text">Oculto</span>
+            <input type="checkbox" (change)="mostrarDiv($event)" />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none">
+    <div class="dropdown show-banks-mobile">
+      <a class="btn btn-block dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        ¿Qué banco quieres ver?
+      </a>
+
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item active" href="#">Banco 1</a>
+        <a class="dropdown-item" href="#">Banco 2</a>
+        <a class="dropdown-item" href="#">Banco 3</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row my-3">
+  <div class="col-12">
+    <div #d1 class="bank-section">
+      <div class="title">
+        <i class="fas fa-university fa-2x mr-3"></i>
+        <b>Banco 1</b>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-banner></app-banner>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta de ahorros</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta corriente</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta de ahorros</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta corriente</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

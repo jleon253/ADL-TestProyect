@@ -1,0 +1,32 @@
+@import "../../../assets/scss/utils/layout";
+@import "../../../assets/scss/utils/variables";
+@import "../../../assets/scss/utils/fonts";
+@import "../../../assets/scss/utils/effects";
+@import "../../../assets/scss/utils/media";
+@import "../../../assets/scss/utils/mixins";
+
+.topbar{
+  width: 100%;
+  @include f-center-between();
+  .menu-right{
+    @include f-center-between();
+    .menu__item{
+      @include f-center-between();
+      margin: 10px;
+      .ic{
+        margin-left: 10px;
+        font-size: 30px;
+      }
+      .noti-badge{
+        width: 20px;
+        padding: 3px;
+        @include f-lato;
+        font-weight: 400;
+        color: white;
+        border-radius: 100%;
+        background-color: $c-danger;
+        transform: translateY(-5px);
+      }
+    }
+  }
+}

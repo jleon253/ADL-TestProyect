@@ -1,9 +1,11 @@
 .myToggle__primary{
   background-color: $c-myButton__primary--disabled;
   color: $t-myButton__primary--disabled;
+  border: 1px solid $t-myButton__primary--disabled;
   &.active{
     background-color: $c-myButton__primary;
     color: $t-myButton__primary;
+    border: none;
   }
 }
 

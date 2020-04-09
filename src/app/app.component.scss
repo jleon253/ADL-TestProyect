@@ -17,17 +17,9 @@
   @include bkp-xlarge(){
     display: block;
   }
+  width: 100%;
+  height: 100%;
 }
-
-// .n-tablet{
-//   display: none;
-//   @include bkp-medium(){
-//     display: block;
-//   }
-//   @include bkp-small(){
-//     display: block;
-//   }
-// }
 
 .n-mobile{
   display: none;
