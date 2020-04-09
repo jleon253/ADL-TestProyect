@@ -15,7 +15,6 @@ export class NavbarMobileComponent implements OnInit {
   }
 
   showMenuFull() {
-    console.log('hola menu');
     const m = document.getElementById('menu-full');
     m.style.display = 'flex';
     setTimeout(() => m.classList.add('showMenu'), 100);

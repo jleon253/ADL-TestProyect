@@ -29,25 +29,25 @@
       <div class="text t-dark">
         <b>¿Qué quieres ver?:</b>
       </div>
-      <div class="bank-group">
+      <div class="bank-group" *ngFor="let b of nameBanks">
         <div class="text t-light">
-          Bank_1
+          {{b}}
         </div>
         <div class="btn-group-toggle" data-toggle="buttons">
-          <label class="btn myToggle__primary active">
-            <span class="myToggle__text">Visible</span>
-            <input type="checkbox" checked (change)="showBankToggle($event, 'bank_1')" />
+          <label class="btn myToggle__primary">
+            <span class="myToggle__text">Oculto</span>
+            <input type="checkbox" (change)="showBankToggle($event, b)" />
           </label>
         </div>
       </div>
       <div class="bank-group">
         <div class="text t-light">
-          Bank_2
+          Todos
         </div>
         <div class="btn-group-toggle" data-toggle="buttons">
-          <label class="btn myToggle__primary active">
+          <label class="btn myToggle__primary">
             <span class="myToggle__text">Oculto</span>
-            <input type="checkbox" (change)="showBankToggle($event, 'bank_2')" />
+            <input type="checkbox" (change)="showBankToggle($event, '')" />
           </label>
         </div>
       </div>
@@ -62,8 +62,7 @@
       </a>
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item active" (click)="showBankDropdown($event, 'bank_1')">Banco 1</a>
-        <a class="dropdown-item" (click)="showBankDropdown($event, 'bank_2')">Banco 2</a>
+        <a class="dropdown-item" *ngFor="let b of nameBanks" (click)="showBankDropdown($event,b)">{{b}}</a>
         <a class="dropdown-item" (click)="showBankDropdown($event, '')">Todos</a>
       </div>
     </div>
@@ -71,65 +70,10 @@
 </div>
 <div class="row my-3">
   <div class="col-12">
-    <div id="bank_1" class="bank-section">
+    <div id="{{b}}" class="bank-section hideBank" *ngFor="let b of nameBanks">
       <div class="title">
         <i class="fas fa-university fa-2x mr-3"></i>
-        <b>Banco 1</b>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12">
-          <app-banner></app-banner>
-        </div>
-      </div>
-      <div class="row my-4">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta de ahorros</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta corriente</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row my-4">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta de ahorros</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta corriente</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="bank_2" class="bank-section hideBank">
-      <div class="title">
-        <i class="fas fa-university fa-2x mr-3"></i>
-        <b>Banco 2</b>
+        <b>{{b}}</b>
       </div>
       <div class="row mt-3">
         <div class="col-12">

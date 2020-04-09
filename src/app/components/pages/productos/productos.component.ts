@@ -1,9 +1,7 @@
+import { DataService } from '../../../services/data.service';
 import {
   Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  Renderer2,
+  OnInit
 } from '@angular/core';
 
 @Component({
@@ -12,23 +10,42 @@ import {
   styleUrls: ['./productos.component.scss'],
 })
 export class ProductosComponent implements OnInit {
-  constructor(private renderer: Renderer2) {}
+
+  nameBanks: string[] = new Array();
+
+  constructor(private dataService: DataService) {
+    this.nameBanks = dataService.namebnks;
+    console.log(this.nameBanks);
+  }
 
   ngOnInit() {}
 
   showBankToggle(e: any, idBank: string) {
-    const b = document.getElementById(idBank);
-    if (!e.target.checked) {
-      e.target.previousSibling.textContent = 'Oculto';
-      b.classList.add('hideBank');
-    } else {
-      e.target.previousSibling.textContent = 'Visible';
+    let b: any;
+    if ((e.target.checked) && (idBank === '')) {
+      document
+        .querySelectorAll('.bank-section')
+        .forEach((el) => el.classList.remove('hideBank'));
+    } else if ((!e.target.checked) && (idBank === '')) {
+      document
+        .querySelectorAll('.bank-section')
+        .forEach((el) => el.classList.add('hideBank'));
+    } else if ((e.target.checked) && (idBank !== '')) {
+      b = document.getElementById(idBank);
       b.classList.remove('hideBank');
       b.scrollIntoView();
+    } else {
+      b = document.getElementById(idBank);
+      b.classList.add('hideBank');
+    }
+    if (!e.target.checked) {
+      e.target.previousSibling.textContent = 'Oculto';
+    } else {
+      e.target.previousSibling.textContent = 'Visible';
     }
   }
 
-  showBankDropdown(e: any, idBank: string) {
+  showBankDropdown(e: any, idBank: string) { 
     document
       .querySelectorAll('.dropdown-item')
       .forEach((el) => el.classList.remove('active'));
