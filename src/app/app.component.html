@@ -1,15 +1,40 @@
-<div class="cotainer">
-  <div class="row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 pr-0">
+<div class="container px-0">
+  <div class="row mx-0">
+    <div style="z-index: 2;" class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 px-0">
       <app-notification-bar class="n-notification"></app-notification-bar>
       <app-navbar-desktop class="n-desktop"></app-navbar-desktop>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 pr-0">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-10 col-xl-10 px-0">
       <router-outlet></router-outlet>
     </div>
-    <div class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none pr-0">
-      <!-- <app-navbar-tablet class="n-tablet"></app-navbar-tablet> -->
+    <div style="z-index: 1;" class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none px-0">
       <app-navbar-mobile class="n-mobile"></app-navbar-mobile>
+    </div>
+    <div id="menu-full" style="z-index: 1;" class="menu-full hideMenu">
+      <div class="head">
+        <h3 class="title t-bigger">Más opciones</h3>
+        <a (click)="hideMenuFull()"><i class="fas fa-times ic"></i></a>
+      </div>
+      <div class="menu-g">
+        <div class="menu__item">
+          <i class="fas fa-file ic"></i>
+          <h4 class="t-normal">Certificados</h4>
+        </div>
+        <div class="menu__item">
+          <i class="fas fa-lock ic"></i>
+          <h4 class="t-normal">Seguridad</h4>
+        </div>
+      </div>
+      <div class="menu-g">
+        <div class="menu__item">
+          <i class="fas fa-user-circle ic"></i>
+          <h4 class="t-normal">Perfil</h4>
+        </div>
+        <div class="menu__item">
+          <i class="fas fa-sign-out-alt ic"></i>
+          <h4 class="t-normal">Salida segura</h4>
+        </div>
+      </div>
     </div>
   </div>
 </div>

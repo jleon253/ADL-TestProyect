@@ -13,6 +13,7 @@ import { NavbarMobileComponent } from './components/navbar-mobile/navbar-mobile.
 import { ProductosComponent } from './components/pages/productos/productos.component';
 import { NavbarTabletComponent } from './components/navbar-tablet/navbar-tablet.component';
 import { NotificationBarComponent } from './components/notification-bar/notification-bar.component';
+import { MenufullComponent } from './components/menufull/menufull.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NotificationBarComponent } from './components/notification-bar/notifica
     NavbarMobileComponent,
     ProductosComponent,
     NavbarTabletComponent,
-    NotificationBarComponent
+    NotificationBarComponent,
+    MenufullComponent
   ],
   imports: [
     BrowserModule,

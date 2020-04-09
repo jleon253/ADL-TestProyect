@@ -21,10 +21,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    document.getElementById('menu-full').style.display = 'none';
     // this.service.getData().subscribe( (d) => {
     //   this.data = d;
     //   console.log(this.data);
     // });
+  }
+
+  hideMenuFull() {
+    console.log('chao menu');
+    const m = document.getElementById('menu-full');
+    m.classList.remove('showMenu');
+    setTimeout(() => m.style.display = 'none', 350);
   }
 
   mostrarDiv(e: any) {

@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarMobileComponent implements OnInit {
 
+  menuvisible = false;
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  showMenuFull() {
+    console.log('hola menu');
+    const m = document.getElementById('menu-full');
+    m.style.display = 'flex';
+    setTimeout(() => m.classList.add('showMenu'), 100);
+  }
+
 
 }
