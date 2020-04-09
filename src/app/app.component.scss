@@ -33,3 +33,14 @@
     display: block;
   }
 }
+
+.content-view{
+  @include bkp-small(){
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+  @include bkp-xsmall(){
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+  }
+}

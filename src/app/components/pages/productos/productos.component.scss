@@ -55,10 +55,10 @@
   border: 1px solid #7786A2;
   border-radius: 5px;
   padding: 15px 15px;
-  height: 100%;
+  margin-bottom: 50px;
   max-height: 100%;
   overflow: auto;
-  transition: 0.3s all ease-in;
+  transition: 0.5s all ease-in;
   .title{
     @include f-center-between();
     justify-content: flex-start;
@@ -74,7 +74,12 @@
 }
 
 .hideBank{
+  margin-bottom: 10px;
   max-height: 60px ;
   overflow: hidden;
-  transition: 0.3s all ease-in;
+  transition: 0.5s all ease-in;
+  border: 1px solid #D6D6D6;
+  .title{
+    color: #989898;
+  }
 }

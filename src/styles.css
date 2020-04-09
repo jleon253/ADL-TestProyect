@@ -529,14 +529,15 @@ html, body {
   height: 100vh;
   min-height: 100vh;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
-/* line 28, src/styles.scss */
+/* line 29, src/styles.scss */
 body {
   background-color: #f2f2f2;
 }
 
-/* line 33, src/styles.scss */
+/* line 34, src/styles.scss */
 .myIcon {
   color: #649EDB;
 }

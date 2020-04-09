@@ -36,7 +36,7 @@
         <div class="btn-group-toggle" data-toggle="buttons">
           <label class="btn myToggle__primary active">
             <span class="myToggle__text">Visible</span>
-            <input type="checkbox" checked (change)="showBank($event)" />
+            <input type="checkbox" checked (change)="showBankToggle($event, 'bank_1')" />
           </label>
         </div>
       </div>
@@ -45,20 +45,9 @@
           Bank_2
         </div>
         <div class="btn-group-toggle" data-toggle="buttons">
-          <label class="btn myToggle__primary">
+          <label class="btn myToggle__primary active">
             <span class="myToggle__text">Oculto</span>
-            <input type="checkbox" (change)="mostrarDiv($event)" />
-          </label>
-        </div>
-      </div>
-      <div class="bank-group">
-        <div class="text t-light">
-          Bank_3
-        </div>
-        <div class="btn-group-toggle" data-toggle="buttons">
-          <label class="btn myToggle__primary">
-            <span class="myToggle__text">Oculto</span>
-            <input type="checkbox" (change)="mostrarDiv($event)" />
+            <input type="checkbox" (change)="showBankToggle($event, 'bank_2')" />
           </label>
         </div>
       </div>
@@ -73,19 +62,74 @@
       </a>
 
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item active" href="#">Banco 1</a>
-        <a class="dropdown-item" href="#">Banco 2</a>
-        <a class="dropdown-item" href="#">Banco 3</a>
+        <a class="dropdown-item active" (click)="showBankDropdown($event, 'bank_1')">Banco 1</a>
+        <a class="dropdown-item" (click)="showBankDropdown($event, 'bank_2')">Banco 2</a>
+        <a class="dropdown-item" (click)="showBankDropdown($event, '')">Todos</a>
       </div>
     </div>
   </div>
 </div>
 <div class="row my-3">
   <div class="col-12">
-    <div #d1 class="bank-section">
+    <div id="bank_1" class="bank-section">
       <div class="title">
         <i class="fas fa-university fa-2x mr-3"></i>
         <b>Banco 1</b>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <app-banner></app-banner>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta de ahorros</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta corriente</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta de ahorros</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="bank__product">
+            <div class="title">
+              <b>Cuenta corriente</b>
+            </div>
+            <div class="product-resume">
+              <app-product-resume></app-product-resume>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="bank_2" class="bank-section hideBank">
+      <div class="title">
+        <i class="fas fa-university fa-2x mr-3"></i>
+        <b>Banco 2</b>
       </div>
       <div class="row mt-3">
         <div class="col-12">

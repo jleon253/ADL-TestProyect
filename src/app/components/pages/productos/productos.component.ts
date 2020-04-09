@@ -1,29 +1,55 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
-  styleUrls: ['./productos.component.scss']
+  styleUrls: ['./productos.component.scss'],
 })
 export class ProductosComponent implements OnInit {
+  constructor(private renderer: Renderer2) {}
 
-  @ViewChild('d1', {static: false}) d1: ElementRef;
+  ngOnInit() {}
 
-  constructor(private renderer: Renderer2) { }
-
-  ngOnInit() {
-  }
-
-  showBank(e: any) {
+  showBankToggle(e: any, idBank: string) {
+    const b = document.getElementById(idBank);
     if (!e.target.checked) {
-      console.log('checkeado')
       e.target.previousSibling.textContent = 'Oculto';
-      this.renderer.addClass(this.d1.nativeElement, 'hideBank');
+      b.classList.add('hideBank');
     } else {
-      console.log('no checkeado')
       e.target.previousSibling.textContent = 'Visible';
-      this.renderer.removeClass(this.d1.nativeElement, 'hideBank');
+      b.classList.remove('hideBank');
+      b.scrollIntoView();
     }
   }
 
+  showBankDropdown(e: any, idBank: string) {
+    document
+      .querySelectorAll('.dropdown-item')
+      .forEach((el) => el.classList.remove('active'));
+    e.target.classList.add('active');
+    const listBank = document.getElementsByClassName('bank-section');
+    let b: any;
+    if (idBank !== '') {
+      b = document.getElementById(idBank);
+      for (let i = 0; i < listBank.length; i++) {
+        const bank = listBank[i];
+        if (bank.id !== b.id) {
+          bank.classList.add('hideBank');
+        } else {
+          bank.classList.remove('hideBank');
+        }
+      }
+    } else {
+      document
+        .querySelectorAll('.bank-section')
+        .forEach((el) => el.classList.remove('hideBank'));
+      window.scrollTo(0, 0);
+    }
+  }
 }
