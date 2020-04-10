@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import Swiper from 'swiper';
+import { ConectorService } from '../../services/conector.service';
 
 @Component({
   selector: 'app-banner',
@@ -9,18 +10,34 @@ import Swiper from 'swiper';
 })
 export class BannerComponent implements OnInit {
 
-  constructor() { }
+  dataBank = [];
+  total = [];
+
+  constructor(private conectService: ConectorService) {
+    console.log('contructor en banner');
+    this.test();
+   }
 
   ngOnInit() {
-    var swiper = new Swiper('.swiper-container', {
-      // slidesPerView: 1,
-      // spaceBetween: 15,
-      // centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
+      console.log('init en banner');
+  }
+
+  test() {
+    this.conectService.dataBank$.subscribe( d => {
+      console.log('emitio en banner');
+      this.total = [];
+      this.dataBank = d;
+      this.total = this.conectService.totalValueAccounts(this.dataBank);
+      console.log(this.total);
+      this.initSwiper();
+    });
+  }
+
+  initSwiper() {
+    let swiper;
+    setTimeout( () => {
+      var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -31,6 +48,7 @@ export class BannerComponent implements OnInit {
         clickable: true,
       },
     });
+    }, 700);
   }
 
 }

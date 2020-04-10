@@ -5,43 +5,13 @@
   <div class="myBanner__info">
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" *ngFor="let t of total">
           <div class="info">
             <div class="info__text t-blue t-small">
-              En productos de ahorro tienes:
+              En productos de {{t.type}} tienes:
             </div>
             <div class="info__value t-blue t-bigger">
-              <b>$ 7’700.000</b>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-           <div class="info">
-            <div class="info__text t-blue t-small">
-              En productos de ahorro tienes:
-            </div>
-            <div class="info__value t-blue t-bigger">
-              <b>$ 7’700.000</b>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-           <div class="info">
-            <div class="info__text t-blue t-small">
-              En productos de ahorro tienes:
-            </div>
-            <div class="info__value t-blue t-bigger">
-              <b>$ 7’700.000</b>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-           <div class="info">
-            <div class="info__text t-blue t-small">
-              En productos de ahorro tienes:
-            </div>
-            <div class="info__value t-blue t-bigger">
-              <b>$ 7’700.000</b>
+              <b>$ {{t.total}}{{t.currencyCode}}</b>
             </div>
           </div>
         </div>

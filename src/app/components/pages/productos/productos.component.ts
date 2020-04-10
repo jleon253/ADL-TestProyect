@@ -1,4 +1,5 @@
 import { DataService } from '../../../services/data.service';
+import { ConectorService } from '../../../services/conector.service';
 import {
   Component,
   OnInit
@@ -11,38 +12,40 @@ import {
 })
 export class ProductosComponent implements OnInit {
 
-  nameBanks: string[] = new Array();
+  nameBanks = [];
+  banks = [];
+  data: any = {
+    names: [],
+    banks: []
+  };
+  titleBank = '';
+  bankShow = false;
 
-  constructor(private dataService: DataService) {
-    this.nameBanks = dataService.namebnks;
-    console.log(this.nameBanks);
+  constructor(public dataService: DataService, private conectService: ConectorService) {
+    this.getDataOrder();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  showBankToggle(e: any, idBank: string) {
-    let b: any;
-    if ((e.target.checked) && (idBank === '')) {
-      document
-        .querySelectorAll('.bank-section')
-        .forEach((el) => el.classList.remove('hideBank'));
-    } else if ((!e.target.checked) && (idBank === '')) {
-      document
-        .querySelectorAll('.bank-section')
-        .forEach((el) => el.classList.add('hideBank'));
-    } else if ((e.target.checked) && (idBank !== '')) {
-      b = document.getElementById(idBank);
-      b.classList.remove('hideBank');
-      b.scrollIntoView();
-    } else {
-      b = document.getElementById(idBank);
-      b.classList.add('hideBank');
-    }
-    if (!e.target.checked) {
-      e.target.previousSibling.textContent = 'Oculto';
-    } else {
-      e.target.previousSibling.textContent = 'Visible';
-    }
+  dataOrder() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(this.dataService.getDataOrder());
+        reject('Fallo obtener getDataOrder()');
+      }, 500);
+    });
+  }
+
+  async getDataOrder() {
+    await this.dataOrder().then( (response) => {
+      this.data.names = response['names'];
+      this.data.banks = response['banks'];
+    }, (error) => {
+      console.log(error);
+    });
+    this.nameBanks = this.data.names[0];
+    this.banks = this.data.banks;
   }
 
   showBankDropdown(e: any, idBank: string) { 
@@ -50,23 +53,26 @@ export class ProductosComponent implements OnInit {
       .querySelectorAll('.dropdown-item')
       .forEach((el) => el.classList.remove('active'));
     e.target.classList.add('active');
-    const listBank = document.getElementsByClassName('bank-section');
-    let b: any;
-    if (idBank !== '') {
-      b = document.getElementById(idBank);
-      for (let i = 0; i < listBank.length; i++) {
-        const bank = listBank[i];
-        if (bank.id !== b.id) {
-          bank.classList.add('hideBank');
-        } else {
-          bank.classList.remove('hideBank');
-        }
-      }
-    } else {
-      document
-        .querySelectorAll('.bank-section')
-        .forEach((el) => el.classList.remove('hideBank'));
-      window.scrollTo(0, 0);
-    }
+    const b = document.getElementById('bankToShow');
+    b.classList.add('hideBank');
+    setTimeout( () => {
+      this.titleBank = idBank;
+      this.bankShow = true;
+      this.dataBank(idBank);
+      b.classList.remove('hideBank');
+    }, 1000);
   }
+
+  dataBank(id: string) {
+    let temp = {};
+    for (const bank of this.banks) {
+      if (Object.keys(bank)[0] === id) {
+        temp = bank[id];
+        break;
+      }
+    }
+    console.log('emitiendo desde productos');
+    this.conectService.dataBank$.emit(temp);
+  }
+
 }
