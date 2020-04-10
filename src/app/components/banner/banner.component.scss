@@ -32,7 +32,6 @@
       text-align: left;
     }
     @include bkp-xlarge(){
-      width: 60%;
       text-align: left;
     }
   }
@@ -43,9 +42,6 @@
     }
     @include bkp-small(){
       width: 100%;
-    }
-    @include bkp-xlarge(){
-      width: 40%;
     }
     .swiper-container {
       width: 100%;

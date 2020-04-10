@@ -8,6 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
 
   data: any = [];
+  dataOrder: any = {
+    names: [],
+    banks: []
+  };
   namebnks: string[] = new Array();
   bnk1: any[] = new Array();
   bnk2: any[] = new Array();
@@ -27,10 +31,8 @@ export class DataService {
 
   orderByBanks(products: any[]): any[] {
     const nameBanks = [];
-    // console.log('orderByBanks');
     for (const product of products) {
       nameBanks.push(product.accountInformation.bank);
-      // console.log(product.accountInformation.bank);
       switch (product.accountInformation.bank) {
         case 'BANCO_1':
           this.bnk1.push(product);
@@ -48,10 +50,10 @@ export class DataService {
           break;
       }
     }
-    // console.log(this.bnk1);
-    // console.log(this.bnk2);
-    // console.log(this.bnk3);
-    // console.log(this.bnk4);
+    this.dataOrder.banks.push({BANCO_1: this.bnk1});
+    this.dataOrder.banks.push({BANCO_2: this.bnk2});
+    this.dataOrder.banks.push({BANCO_3: this.bnk3});
+    this.dataOrder.banks.push({BANCO_4: this.bnk4});
     return nameBanks;
   }
 
@@ -66,8 +68,14 @@ export class DataService {
       }
     }
     this.namebnks.sort();
-    // console.log(this.namebnks);
+    this.dataOrder.names.push(this.namebnks);
   }
 
+  getNameBnks() {
+    return this.namebnks;
+  }
 
+  getDataOrder() {
+    return this.dataOrder;
+  }
 }

@@ -23,44 +23,13 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="col-lg-12 col-xl-12 d-none d-sm-none d-md-none d-lg-block d-xl-block">
-    <div class="show-banks">
-      <div class="text t-dark">
-        <b>¿Qué quieres ver?:</b>
-      </div>
-      <div class="bank-group" *ngFor="let b of nameBanks">
-        <div class="text t-light">
-          {{b}}
-        </div>
-        <div class="btn-group-toggle" data-toggle="buttons">
-          <label class="btn myToggle__primary">
-            <span class="myToggle__text">Oculto</span>
-            <input type="checkbox" (change)="showBankToggle($event, b)" />
-          </label>
-        </div>
-      </div>
-      <div class="bank-group">
-        <div class="text t-light">
-          Todos
-        </div>
-        <div class="btn-group-toggle" data-toggle="buttons">
-          <label class="btn myToggle__primary">
-            <span class="myToggle__text">Oculto</span>
-            <input type="checkbox" (change)="showBankToggle($event, '')" />
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="row mt-4">
-  <div class="col-12 col-sm-12 col-md-12 d-lg-none d-xl-none">
+  <div class="col-12 col-sm-12 col-md-12">
     <div class="dropdown show-banks-mobile">
       <a class="btn btn-block dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         ¿Qué banco quieres ver?
       </a>
-
       <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" *ngFor="let b of nameBanks" (click)="showBankDropdown($event,b)">{{b}}</a>
         <a class="dropdown-item" (click)="showBankDropdown($event, '')">Todos</a>
@@ -68,38 +37,17 @@
     </div>
   </div>
 </div>
+
 <div class="row my-3">
   <div class="col-12">
-    <div id="{{b}}" class="bank-section hideBank" *ngFor="let b of nameBanks">
+    <div id="bankToShow" class="bank-section hideBank">
       <div class="title">
         <i class="fas fa-university fa-2x mr-3"></i>
-        <b>{{b}}</b>
+        <b>{{titleBank}}</b>
       </div>
       <div class="row mt-3">
         <div class="col-12">
           <app-banner></app-banner>
-        </div>
-      </div>
-      <div class="row my-4">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta de ahorros</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta corriente</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
         </div>
       </div>
       <div class="row my-4">
