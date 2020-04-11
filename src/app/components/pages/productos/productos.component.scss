@@ -23,24 +23,49 @@
     background-color: white;
     border: 1px solid #D6D6D6;
     border-radius: 3px;
-    color: #989898;
+    color: $c-primary;
     @include f-roboto;
     font-weight: 400;
     text-align: left;
+    @include bkp-medium(){
+      padding: 10px 10px;
+    }
+    @include bkp-large(){
+      padding: 10px 10px;
+    }
+    @include bkp-xlarge(){
+      padding: 10px 10px;
+    }
     &::after{
       right: 10px;
       position: absolute;
       top: 15px;
+      @include bkp-medium(){
+        right: 20px;
+        top: 20px;
+      }
+      @include bkp-large(){
+        right: 20px;
+        top: 20px;
+      }
+      @include bkp-xlarge(){
+        right: 20px;
+        top: 20px;
+      }
     }
   }
   .dropdown-menu{
     width: 100%;
-    @include shadowHard;
     .dropdown-item{
       padding-top: 1rem;
       padding-bottom: 1rem;
       @include f-roboto;
       font-weight: 200;
+      cursor: pointer;
+      &:active{
+        background-color: $c-primary;
+        color: white;
+      }
       &.active{
         font-weight: 600;
         color: #4B6185;
@@ -67,7 +92,13 @@
 }
 
 .bank__product{
+  height: 100%;
+  padding: 10px 0px;
+  .title{
+    margin-bottom: 10px;
+  }
   .product-resume{
+    height: 100%;
     background-color: #f7f7f7;
     position: relative;
   }

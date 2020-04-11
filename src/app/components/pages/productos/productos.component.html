@@ -25,14 +25,13 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-12 col-sm-12 col-md-12">
-    <div class="dropdown show-banks-mobile">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mx-auto">
+    <div class="dropdown show-banks-mobile shadow-sm">
       <a class="btn btn-block dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        ¿Qué banco quieres ver?
+        <b>¿Qué banco quieres ver?</b>
       </a>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+      <div class="dropdown-menu shadow" aria-labelledby="dropdownMenuLink">
         <a class="dropdown-item" *ngFor="let b of nameBanks" (click)="showBankDropdown($event,b)">{{b}}</a>
-        <a class="dropdown-item" (click)="showBankDropdown($event, '')">Todos</a>
       </div>
     </div>
   </div>
@@ -41,7 +40,10 @@
 <div class="row my-3">
   <div class="col-12">
     <div id="bankToShow" class="bank-section hideBank">
-      <div class="title">
+      <div class="title" *ngIf="!bankShow">
+        <b class="text-center mb-2 w-100" >{{emptyData}}</b>
+      </div>
+      <div class="title" *ngIf="bankShow">
         <i class="fas fa-university fa-2x mr-3"></i>
         <b>{{titleBank}}</b>
       </div>
@@ -51,26 +53,39 @@
         </div>
       </div>
       <div class="row my-4">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 my-3" *ngFor="let types of typesAccounts">
           <div class="bank__product">
             <div class="title">
-              <b>Cuenta de ahorros</b>
+              <b>{{types.type}}</b>
             </div>
             <div class="product-resume">
-              <app-product-resume></app-product-resume>
+              <app-product-resume [accountsList]="types.accounts"></app-product-resume>
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-          <div class="bank__product">
-            <div class="title">
-              <b>Cuenta corriente</b>
-            </div>
-            <div class="product-resume">
-              <app-product-resume></app-product-resume>
-            </div>
-          </div>
-        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="{{dataModal.idModal}}" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Información de cuenta: <b>{{dataModal.idModal}}</b></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre>
+          {{dataModal.account|json}}
+        </pre>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

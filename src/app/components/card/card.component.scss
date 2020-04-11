@@ -47,4 +47,11 @@
     @include d-flex-r;
     justify-content: space-between;
   }
+  .myCard__foot{
+    @include f-lato;
+    text-align: left;
+    .progress__label{
+      font-size: 12px;
+    }
+  }
 }

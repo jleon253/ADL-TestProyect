@@ -14,21 +14,18 @@ export class BannerComponent implements OnInit {
   total = [];
 
   constructor(private conectService: ConectorService) {
-    console.log('contructor en banner');
     this.test();
    }
 
   ngOnInit() {
-      console.log('init en banner');
   }
 
   test() {
     this.conectService.dataBank$.subscribe( d => {
-      console.log('emitio en banner');
       this.total = [];
       this.dataBank = d;
       this.total = this.conectService.totalValueAccounts(this.dataBank);
-      console.log(this.total);
+      // console.log(this.total);
       this.initSwiper();
     });
   }

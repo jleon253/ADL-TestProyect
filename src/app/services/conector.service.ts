@@ -6,9 +6,11 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class ConectorService {
 
   dataBank$ = new EventEmitter<any>();
+  modalCard$ = new EventEmitter<any>();
 
-  typesAccount: string[] = new Array();
+  typesAccountNames: string[] = new Array();
   totalValue: any[] = [];
+  typesAccounts: any[] = [];
 
   constructor() { }
 
@@ -16,17 +18,17 @@ export class ConectorService {
     Get type account names by alphabetic order
   */
   typeAccountNameOrder(dataBank: any[]) {
-    this.typesAccount = [];
+    this.typesAccountNames = [];
     for (const data of dataBank) {
-      if (!this.typesAccount) {
-        this.typesAccount.push(data['typeAccount']);
+      if (!this.typesAccountNames) {
+        this.typesAccountNames.push(data['typeAccount']);
       } else {
-        if (this.typesAccount.indexOf(data['typeAccount']) === -1) {
-          this.typesAccount.push(data['typeAccount']);
+        if (this.typesAccountNames.indexOf(data['typeAccount']) === -1) {
+          this.typesAccountNames.push(data['typeAccount']);
         }
       }
     }
-    this.typesAccount.sort();
+    this.typesAccountNames.sort();
   }
 
   /*
@@ -37,7 +39,7 @@ export class ConectorService {
     let currencyCode: string;
     this.totalValue = [];
     this.typeAccountNameOrder(dataBank);
-    for (const type of this.typesAccount) {
+    for (const type of this.typesAccountNames) {
       total = 0;
       for (const data of dataBank) {
         if (data['typeAccount'] === type) {
@@ -71,6 +73,32 @@ export class ConectorService {
     return this.totalValue;
   }
 
+  getAccountByType(dataBank: any[]) {
+    let accounts = [];
+    this.typesAccounts = [];
+    this.typeAccountNameOrder(dataBank);
+    for (const type of this.typesAccountNames) {
+      accounts = [];
+      for (const data of dataBank) {
+        if (data['typeAccount'] === type) {
+          accounts.push(data);
+        }
+      }
+      this.typesAccounts.push({type, accounts});
+    }
+    return this.typesAccounts;
+  }
 
+  getMyDate(date: string){
+    const d = new Date(date);
+    const dd = d.getDate();
+    const mm = d.getMonth() + 1;
+    const yyyy = d.getFullYear();
+    let day = '';
+    let month = '';
+    day = (dd < 10) ? `0${dd}` : `${dd}`;
+    month = (mm < 10) ? `0${mm}` : `${mm}`;
+    return `${day}/${month}/${yyyy}`;
+  }
 
 }

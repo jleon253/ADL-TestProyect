@@ -1,22 +1,7 @@
 <div class="swiper-container-pr">
   <div class="swiper-wrapper">
-    <div class="swiper-slide">
-      <app-card></app-card>
-    </div>
-    <div class="swiper-slide">
-      <app-card></app-card>
-    </div>
-    <div class="swiper-slide">
-      <app-card></app-card>
-    </div>
-    <div class="swiper-slide">
-      <app-card></app-card>
-    </div>
-    <div class="swiper-slide">
-      <app-card></app-card>
-    </div>
-    <div class="swiper-slide">
-      <app-card></app-card>
+    <div class="swiper-slide" *ngFor="let account of accountsList">
+      <app-card [accountInfo]="account"></app-card>
     </div>
   </div>
   <!-- Add Pagination -->

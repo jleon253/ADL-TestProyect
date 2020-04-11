@@ -5,6 +5,8 @@ import {
   OnInit
 } from '@angular/core';
 
+declare var $: any;
+
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
@@ -13,6 +15,7 @@ import {
 export class ProductosComponent implements OnInit {
 
   nameBanks = [];
+  typesAccounts = [];
   banks = [];
   data: any = {
     names: [],
@@ -20,9 +23,13 @@ export class ProductosComponent implements OnInit {
   };
   titleBank = '';
   bankShow = false;
+  emptyData = 'Sin datos que mostrar';
+
+  dataModal = {};
 
   constructor(public dataService: DataService, private conectService: ConectorService) {
     this.getDataOrder();
+    this.emitModal();
   }
 
   ngOnInit() {
@@ -47,32 +54,49 @@ export class ProductosComponent implements OnInit {
     this.nameBanks = this.data.names[0];
     this.banks = this.data.banks;
   }
-
-  showBankDropdown(e: any, idBank: string) { 
+ 
+  showBankDropdown(e: any, idBank: string) {
+    this.emptyData = 'Cargando datos ...';
     document
       .querySelectorAll('.dropdown-item')
       .forEach((el) => el.classList.remove('active'));
     e.target.classList.add('active');
     const b = document.getElementById('bankToShow');
     b.classList.add('hideBank');
+    this.bankShow = false;
+    
     setTimeout( () => {
+      this.emptyData = '';
+      this.typesAccounts = this.conectService.getAccountByType(this.dataBank(idBank));
+      // console.log(this.typesAccounts);
       this.titleBank = idBank;
       this.bankShow = true;
-      this.dataBank(idBank);
       b.classList.remove('hideBank');
     }, 1000);
   }
 
   dataBank(id: string) {
-    let temp = {};
+    let temp = [];
     for (const bank of this.banks) {
       if (Object.keys(bank)[0] === id) {
         temp = bank[id];
         break;
       }
     }
-    console.log('emitiendo desde productos');
     this.conectService.dataBank$.emit(temp);
+    return temp;
+  }
+
+  emitModal() {
+    this.conectService.modalCard$.subscribe( account => {
+      console.log('emitio modal');
+      const idModal = account['id'];
+      this.dataModal = {idModal, account};
+      console.log(this.dataModal);
+      setTimeout(() => {
+        $('#' + this.dataModal['idModal']).modal('show');
+      }, 200);
+    });
   }
 
 }
