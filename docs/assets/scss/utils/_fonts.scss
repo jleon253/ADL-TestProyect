@@ -1,0 +1,68 @@
+@mixin f-lato {
+  font-family: 'Lato', sans-serif;
+  word-break: break-word;
+}
+
+@mixin f-roboto {
+  font-family: 'Roboto', sans-serif;
+  word-break: break-word;
+}
+
+@mixin f-20{
+  font-size: 20px;
+}
+
+@mixin f-18{
+  font-size: 18px;
+}
+
+@mixin f-16{
+  font-size: 16px;
+}
+
+@mixin f-14{
+  font-size: 14px;
+}
+
+@mixin f-12{
+  font-size: 12px;
+}
+
+@mixin f-10{
+  font-size: 10px;
+}
+
+
+.t-bigger{
+  @include f-20;
+  @include f-roboto;
+}
+
+.t-big{
+  @include f-18;
+  @include f-roboto;
+}
+
+.t-xnormal{
+  @include f-16;
+  @include f-lato;
+}
+
+.t-normal{
+  @include f-14;
+  @include f-lato;
+}
+
+.t-small{
+  @include f-12;
+  @include f-lato;
+}
+
+.t-smaller{
+  @include f-10;
+  @include f-lato;
+}
+
+label{
+  @include f-lato;
+}

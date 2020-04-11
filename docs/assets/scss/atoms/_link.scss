@@ -1,0 +1,8 @@
+.myLink{
+  @include f-roboto;
+  @include f-12;
+  @include transitionSoft;
+  &:hover{
+    text-decoration: none;
+  }
+}

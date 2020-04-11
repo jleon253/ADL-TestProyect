@@ -1,0 +1,22 @@
+@mixin myButton {
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px 15px;
+  @include f-roboto;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: 0.3s all ease-in;
+  &:hover{
+    background-color: $c-myButton__primary--hover;
+    cursor: pointer;
+  }
+} 
+
+.myButton__primary{
+  @include myButton();
+  background-color: $c-myButton__primary;
+  color: $t-myButton__primary;
+}
