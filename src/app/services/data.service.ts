@@ -25,7 +25,6 @@ export class DataService {
 
   async getData() {
     this.data = await this.http.get<any>('assets/data/data-valid.json').toPromise();
-    // console.log(this.data);
     this.getNameBanks(this.orderByBanks(this.data.product));
   }
 

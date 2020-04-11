@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import Swiper from 'swiper';
 import { ConectorService } from '../../services/conector.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-banner',
@@ -13,7 +14,8 @@ export class BannerComponent implements OnInit {
   dataBank = [];
   total = [];
 
-  constructor(private conectService: ConectorService) {
+  constructor(private conectService: ConectorService, private translate: TranslateService) {
+    this.translate.setDefaultLang('es');
     this.test();
    }
 
@@ -25,7 +27,6 @@ export class BannerComponent implements OnInit {
       this.total = [];
       this.dataBank = d;
       this.total = this.conectService.totalValueAccounts(this.dataBank);
-      // console.log(this.total);
       this.initSwiper();
     });
   }

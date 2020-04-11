@@ -8,7 +8,7 @@
         <div class="swiper-slide" *ngFor="let t of total">
           <div class="info">
             <div class="info__text t-blue t-small">
-              En productos de {{t.type}} tienes:
+              En productos de {{'typeAccount.' + t.type | translate}} tienes:
             </div>
             <div class="info__value t-blue t-bigger">
               <b>$ {{t.total}}</b>

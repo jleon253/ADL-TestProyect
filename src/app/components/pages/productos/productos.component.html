@@ -56,7 +56,7 @@
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 my-3" *ngFor="let types of typesAccounts">
           <div class="bank__product">
             <div class="title">
-              <b>{{types.type}}</b>
+              <b>{{'typeAccount.' + types.type | translate}}</b>
             </div>
             <div class="product-resume">
               <app-product-resume [accountsList]="types.accounts"></app-product-resume>

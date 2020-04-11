@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ConectorService } from '../../services/conector.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card',
@@ -32,7 +33,9 @@ export class CardComponent implements OnInit {
   labelProgress: string;
   valueProgress: number;
 
-  constructor(private conectService: ConectorService) { }
+  constructor(private conectService: ConectorService, private translate: TranslateService) {
+    this.translate.setDefaultLang('es');
+   }
 
   ngOnInit() {
     this.getInfoAccount();

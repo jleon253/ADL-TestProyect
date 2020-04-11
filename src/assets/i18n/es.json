@@ -1,0 +1,9 @@
+{
+  "typeAccount" : {
+    "DEPOSIT_ACCOUNT" : "Cuenta de ahorros",
+    "CREDIT" : "Credito",
+    "CREDIT_CARD" : "Tarjeta de credito",
+    "CERTIFIED_DEPOSIT_TERM" : "CDT",
+    "CURRENT_ACCOUNT" : "Cuenta corriente"
+  }
+}

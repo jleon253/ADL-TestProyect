@@ -4,6 +4,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 declare var $: any;
 
@@ -27,7 +28,8 @@ export class ProductosComponent implements OnInit {
 
   dataModal = {};
 
-  constructor(public dataService: DataService, private conectService: ConectorService) {
+  constructor(public dataService: DataService, private conectService: ConectorService, private translate: TranslateService) {
+    this.translate.setDefaultLang('es');
     this.getDataOrder();
     this.emitModal();
   }
@@ -68,7 +70,6 @@ export class ProductosComponent implements OnInit {
     setTimeout( () => {
       this.emptyData = '';
       this.typesAccounts = this.conectService.getAccountByType(this.dataBank(idBank));
-      // console.log(this.typesAccounts);
       this.titleBank = idBank;
       this.bankShow = true;
       b.classList.remove('hideBank');
@@ -89,10 +90,8 @@ export class ProductosComponent implements OnInit {
 
   emitModal() {
     this.conectService.modalCard$.subscribe( account => {
-      console.log('emitio modal');
       const idModal = account['id'];
       this.dataModal = {idModal, account};
-      console.log(this.dataModal);
       setTimeout(() => {
         $('#' + this.dataModal['idModal']).modal('show');
       }, 200);
