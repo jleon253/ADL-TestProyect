@@ -1,6 +1,18 @@
 # ProyectADL
 
+This project is a technical test for the job as Front End Developer in ADL (Aval Digital Labs), Bogotá Colombia.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.3.
+
+> The UI Design proposal file (mockup), is located at the 'Archivos-diseno' folder.
+
+## Programming language used
+
+The programming languages that I used were:
+* HTML
+* SASS
+* JavaScript and Angular 8
+* JSON (Data)
 
 ## Development server
 
