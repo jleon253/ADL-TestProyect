@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 > The UI Design proposal file (mockup), is located at the 'Archivos-diseno' folder.
 
-Demo: https://jleon253.github.io/ADL-TestProyect/productos
+Demo: https://jleon253.github.io/ADL-TestProyect/
 
 ## Programming language used
 
