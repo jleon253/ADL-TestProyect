@@ -19,14 +19,14 @@
           "options": {
             "outputPath": "dist/proyectADL",
             "index": "src/index.html",
-            "baseHref": "./",
+            "baseHref": "/",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets",
+              "src/assets"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
